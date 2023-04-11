@@ -14,13 +14,37 @@ let mensajeResult = document.querySelector(".contenido");
 let textarea = document.querySelector('textarea');
 let mensaje;
 
-// funciones
-const encriptarMensaje = () => {
+inicializar();
 
+
+// funciones
+const encriptarMensaje = mensaje => {
+    let arrayMensaje = mensaje.split("");
+
+    arrayMensaje = arrayMensaje.map(letra => {
+        if (claves[letra]) return claves[letra];
+        else return letra;
+    });
+
+    arrayMensaje = arrayMensaje.join("");
+
+    mensajeResult.innerHTML = arrayMensaje;
 }
 
-const desencriptarMensaje = () => {
+const desencriptarMensaje = mensaje => {
+    console.log(mensaje);
+}
 
+function inicializar() {
+    mensajeResult.insertAdjacentHTML("beforeend", `
+    <img src="img/Muñeco.png" alt="muñeco">
+
+        <div class="mensajes">
+          <h1>Ningún mensaje fue encontrado</h1>
+          <p>Ingresa el texto que desees encriptar o desencriptar</p>
+        </div>
+    
+    `)
 }
 
 // eventos
@@ -29,9 +53,17 @@ textarea.addEventListener("keyup", () => {
 })
 
 btnEncriptar.addEventListener("click", () => {
-    alert("hola");
+    if (!mensaje) {
+        alert("Escribe un mensaje a encriptar o desencriptar");
+        textarea.focus();
+        return;
+    } else encriptarMensaje(mensaje);
 })
 
 btnDesencriptar.addEventListener("click", () => {
-    alert("adios");
+    if (!mensaje) {
+        alert("Escribe un mensaje a encriptar o desencriptar");
+        textarea.focus();
+        return;
+    } else desencriptarMensaje(mensaje);
 })
