@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
+}
+
+body {
   background: #e5e5e5;
 }
 
@@ -30,6 +33,7 @@ textarea {
   border: none;
   outline: none;
   resize: none;
+  background-color: #e5e5e5;
 }
 
 textarea::placeholder {
@@ -103,34 +107,29 @@ textarea::-webkit-scrollbar-thumb {
   border-radius: 32px;
 }
 
-.lado-der img {
-  width: 300px;
-  position: absolute;
-  right: 15%;
-  top: 20%;
-  bottom: 29.4%;
-  background-color: #fff;
+.lado-der .contenido {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.mensajes {
-  position: absolute;
+.lado-der .contenido .mensajes {
   width: 336px;
   height: 122px;
-  bottom: 15%;
-  right: 8.5%;
-  background-color: #fff;
 }
 
-.mensajes h1 {
+.lado-der .contenido .mensajes h1 {
   font-weight: 700;
   font-size: 24px;
   text-align: center;
-  background-color: #fff;
+  margin-bottom: 1rem;
 }
 
-.mensajes p {
+.lado-der .contenido .mensajes p {
   font-weight: 400;
   font-size: 16px;
   text-align: center;
-  background-color: #fff;
+  color: #495057;
 }
