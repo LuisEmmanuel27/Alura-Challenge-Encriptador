@@ -10,9 +10,14 @@ const claves = {
 // declarando variables
 let btnEncriptar = document.querySelector(".encriptar");
 let btnDesencriptar = document.querySelector(".desencriptar");
-let mensajeResult = document.querySelector(".contenido");
+let contenidoResultado = document.querySelector(".contenido");
 let textarea = document.querySelector('textarea');
 let mensaje;
+
+// declarando el botón para copiar al portapapeles
+let btnCopiar = document.createElement("button");
+btnCopiar.classList.add("copiar");
+btnCopiar.innerText = "Copiar";
 
 inicializar();
 
@@ -21,15 +26,22 @@ inicializar();
 const encriptarMensaje = mensaje => {
     mensaje = mensaje.toLowerCase();
     let arrayMensaje = mensaje.split("");
+    let cajaResultado = document.createElement("div");
+    let resultadoP = document.createElement("p");
 
     arrayMensaje = arrayMensaje.map(letra => {
         if (claves[letra]) return claves[letra];
         else return letra;
     });
-
     arrayMensaje = arrayMensaje.join("");
 
-    mensajeResult.innerHTML = arrayMensaje;
+    cajaResultado.classList.add("resultado");
+    resultadoP.innerText = arrayMensaje;
+    cajaResultado.appendChild(resultadoP);
+    cajaResultado.appendChild(btnCopiar);
+
+    contenidoResultado.innerHTML = "";
+    contenidoResultado.appendChild(cajaResultado);
 }
 
 const desencriptarMensaje = mensaje => {
@@ -37,7 +49,7 @@ const desencriptarMensaje = mensaje => {
 }
 
 function inicializar() {
-    mensajeResult.insertAdjacentHTML("beforeend", `
+    contenidoResultado.insertAdjacentHTML("beforeend", `
     <img src="img/Muñeco.png" alt="muñeco">
 
         <div class="mensajes">
