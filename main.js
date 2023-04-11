@@ -1,4 +1,4 @@
-// declarando objeto de encriptado:
+// DECLARANDO EL OBJETO PARA LOS ENCRIPTADOS:
 const claves = {
     a: "ai",
     e: "enter",
@@ -7,7 +7,7 @@ const claves = {
     u: "ufat"
 }
 
-// declarando variables
+// DECLARACIÓN DE VARIABLES
 let btnEncriptar = document.querySelector(".encriptar");
 let btnDesencriptar = document.querySelector(".desencriptar");
 let contenidoResultado = document.querySelector(".contenido");
@@ -15,40 +15,35 @@ let textarea = document.querySelector('textarea');
 let mensaje;
 let nuevoMensaje;
 
-// declarando el botón para copiar al portapapeles
+// DECLARANDO EL BTN PARA LA FUNCIÓNDE COPIAR EN EL PROTAPAPELES
 let btnCopiar = document.createElement("button");
 btnCopiar.classList.add("copiar");
 btnCopiar.innerText = "Copiar";
 
-inicializar();
-
-
-// funciones
+// FUNCIONES
 const encriptarMensaje = mensaje => {
     mensaje = mensaje.toLowerCase();
-    let arrayMensaje = mensaje.split("");
-    let cajaResultado = document.createElement("div");
-    let resultadoP = document.createElement("p");
+    let mensajeEncriptado = mensaje.split("");
 
-    arrayMensaje = arrayMensaje.map(letra => {
+    mensajeEncriptado = mensajeEncriptado.map(letra => {
         if (claves[letra]) return claves[letra];
         else return letra;
     });
-    arrayMensaje = arrayMensaje.join("");
 
-    cajaResultado.classList.add("resultado");
-    resultadoP.innerText = arrayMensaje;
-    cajaResultado.appendChild(resultadoP);
-    cajaResultado.appendChild(btnCopiar);
+    mensajeEncriptado = mensajeEncriptado.join("");
 
-    contenidoResultado.innerHTML = "";
-    contenidoResultado.appendChild(cajaResultado);
-
-    return arrayMensaje;
+    crearCajaResultado(mensajeEncriptado);
+    return mensajeEncriptado;
 }
 
-const desencriptarMensaje = mensaje => {
-    console.log(mensaje);
+const desencriptarMensaje = mensajeDesencriptado => {
+    for (const clave in claves) {
+        const expresionRegular = new RegExp(claves[clave], "g");
+        mensajeDesencriptado = mensajeDesencriptado.replace(expresionRegular, clave);
+    }
+
+    crearCajaResultado(mensajeDesencriptado);
+    return mensajeDesencriptado;
 }
 
 const copiarMensaje = () => {
@@ -69,11 +64,24 @@ function inicializar() {
           <h1>Ningún mensaje fue encontrado</h1>
           <p>Ingresa el texto que desees encriptar o desencriptar</p>
         </div>
-    
+
     `)
 }
 
-// eventos
+function crearCajaResultado(mensajeResultado) {
+    contenidoResultado.innerHTML = "";
+    let cajaResultado = document.createElement("div");
+    let resultadoP = document.createElement("p");
+    cajaResultado.classList.add("resultado");
+    resultadoP.innerText = mensajeResultado;
+    cajaResultado.appendChild(resultadoP);
+    cajaResultado.appendChild(btnCopiar);
+    contenidoResultado.appendChild(cajaResultado);
+}
+
+inicializar();
+
+// EVENTOS
 textarea.addEventListener("keyup", () => {
     mensaje = textarea.value;
 })
@@ -91,7 +99,7 @@ btnDesencriptar.addEventListener("click", () => {
         alert("Escribe un mensaje a encriptar o desencriptar");
         textarea.focus();
         return;
-    } else desencriptarMensaje(mensaje);
+    } else nuevoMensaje = desencriptarMensaje(mensaje);
 })
 
 btnCopiar.addEventListener("click", copiarMensaje);
