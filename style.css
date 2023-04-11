@@ -24,7 +24,7 @@ textarea {
   width: 577px;
   height: 55%;
   left: 190px;
-  top: 168px;
+  top: 145px;
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -56,7 +56,7 @@ textarea::-webkit-scrollbar-thumb {
   width: 680px;
   height: fit-content;
   left: 190px;
-  bottom: 30px;
+  bottom: 60px;
 }
 
 .botones .advertencia {
@@ -71,10 +71,11 @@ textarea::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.caja-btn .encriptar,
-.caja-btn .desencriptar {
+.encriptar,
+.desencriptar {
   cursor: pointer;
   padding: 24px;
   width: 328px;
@@ -132,4 +133,33 @@ textarea::-webkit-scrollbar-thumb {
   font-size: 16px;
   text-align: center;
   color: #495057;
+}
+
+.contenido .resultado {
+  display: flex;
+  height: 90%;
+  width: 90%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contenido .resultado p {
+  width: 100%;
+  height: 90%;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 24px;
+  color: #495057;
+}
+
+.contenido .resultado .copiar {
+  cursor: pointer;
+  padding: 24px;
+  width: 100%;
+  height: 67px;
+  border-radius: 24px;
+  font-weight: 400;
+  overflow: hidden;
+  border: solid 1px #0a3871;
+  color: #0a3871;
 }
