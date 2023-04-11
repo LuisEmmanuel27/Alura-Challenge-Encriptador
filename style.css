@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  background: #e5e5e5;
+}
+
+.logo {
+  position: absolute;
+  width: 120px;
+  height: 48px;
+  top: 40px;
+  left: 40px;
+  overflow: hidden;
+}
+
+textarea {
+  position: absolute;
+  width: 577px;
+  height: 55%;
+  left: 190px;
+  top: 168px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 150%;
+  color: #0a3871;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+textarea::placeholder {
+  color: #0a3871;
+}
+
+/* Estiliza la barra de desplazamiento */
+textarea::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Estiliza el "pulgar" de la barra de desplazamiento */
+textarea::-webkit-scrollbar-thumb {
+  background-color: #406797;
+  border-radius: 5px;
+}
+
+.botones {
+  position: absolute;
+  width: 680px;
+  height: fit-content;
+  left: 190px;
+  bottom: 30px;
+}
+
+.botones .advertencia {
+  font-size: 12px;
+  opacity: 0.8;
+  font-weight: 400;
+  color: #495057;
+  margin-bottom: 10px;
+}
+
+.botones .caja-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.caja-btn .encriptar,
+.caja-btn .desencriptar {
+  cursor: pointer;
+  padding: 24px;
+  width: 328px;
+  height: 67px;
+  border-radius: 24px;
+  font-weight: 400;
+}
+
+.caja-btn .encriptar {
+  background: #0a3871;
+  border: none;
+  color: #fff;
+}
+
+.caja-btn .desencriptar {
+  background: #d8dfe8;
+  border: none;
+  color: #0a3871;
+  border: solid 1px #0a3871;
+}
+
+.lado-der {
+  position: absolute;
+  width: 30%;
+  height: 90%;
+  right: 25px;
+  top: 40px;
+  background: #ffffff;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.158);
+  border-radius: 32px;
+}
+
+.lado-der img {
+  width: 300px;
+  position: absolute;
+  right: 15%;
+  top: 20%;
+  bottom: 29.4%;
+  background-color: #fff;
+}
+
+.mensajes {
+  position: absolute;
+  width: 336px;
+  height: 122px;
+  bottom: 15%;
+  right: 8.5%;
+  background-color: #fff;
+}
+
+.mensajes h1 {
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.mensajes p {
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  background-color: #fff;
+}
