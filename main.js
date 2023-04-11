@@ -19,6 +19,7 @@ inicializar();
 
 // funciones
 const encriptarMensaje = mensaje => {
+    mensaje = mensaje.toLowerCase();
     let arrayMensaje = mensaje.split("");
 
     arrayMensaje = arrayMensaje.map(letra => {
