@@ -13,6 +13,7 @@ let btnDesencriptar = document.querySelector(".desencriptar");
 let contenidoResultado = document.querySelector(".contenido");
 let textarea = document.querySelector('textarea');
 let mensaje;
+let nuevoMensaje;
 
 // declarando el botón para copiar al portapapeles
 let btnCopiar = document.createElement("button");
@@ -42,10 +43,22 @@ const encriptarMensaje = mensaje => {
 
     contenidoResultado.innerHTML = "";
     contenidoResultado.appendChild(cajaResultado);
+
+    return arrayMensaje;
 }
 
 const desencriptarMensaje = mensaje => {
     console.log(mensaje);
+}
+
+const copiarMensaje = () => {
+    navigator.clipboard.writeText(nuevoMensaje)
+        .then(() => {
+            alert(`Copiado al portapapeles: ${nuevoMensaje}`);
+        })
+        .catch((err) => {
+            console.error(`Error al copiar al portapapeles: ${err}`);
+        });
 }
 
 function inicializar() {
@@ -70,7 +83,7 @@ btnEncriptar.addEventListener("click", () => {
         alert("Escribe un mensaje a encriptar o desencriptar");
         textarea.focus();
         return;
-    } else encriptarMensaje(mensaje);
+    } else nuevoMensaje = encriptarMensaje(mensaje);
 })
 
 btnDesencriptar.addEventListener("click", () => {
@@ -80,3 +93,5 @@ btnDesencriptar.addEventListener("click", () => {
         return;
     } else desencriptarMensaje(mensaje);
 })
+
+btnCopiar.addEventListener("click", copiarMensaje);
