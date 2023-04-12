@@ -227,16 +227,16 @@ textarea::-o-scrollbar-thumb {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 425px) {
   .logo {
     top: 20px;
-    left: -30px;
+    left: -25px;
   }
 
   textarea {
     width: 90%;
     height: 35%;
-    left: 5.7%;
+    left: 5%;
     top: 145px;
     font-size: 32px;
     line-height: 150%;
@@ -244,7 +244,7 @@ textarea::-o-scrollbar-thumb {
 
   .botones {
     width: 90%;
-    left: 5.7%;
+    left: 13%;
     bottom: 28%;
   }
 
@@ -257,5 +257,19 @@ textarea::-o-scrollbar-thumb {
     height: 23%;
     left: 5.6%;
     top: 75%;
+  }
+}
+
+@media (max-width: 375px) {
+  textarea {
+    left: 5.7%;
+  }
+
+  .botones {
+    left: 5.7%;
+  }
+
+  .lado-der {
+    left: 4%;
   }
 }
