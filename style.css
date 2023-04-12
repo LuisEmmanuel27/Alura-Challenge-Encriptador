@@ -163,3 +163,69 @@ textarea::-webkit-scrollbar-thumb {
   border: solid 1px #0a3871;
   color: #0a3871;
 }
+
+@media (max-width: 768px) {
+  .logo {
+    left: 20px;
+    top: 73.42px;
+  }
+
+  textarea {
+    width: 90%;
+    height: 55%;
+    left: 5.7%;
+    top: 200px;
+    font-size: 32px;
+    line-height: 150%;
+  }
+
+  .botones {
+    width: 90%;
+    left: 5.7%;
+    bottom: 17%;
+  }
+
+  .lado-der {
+    width: 90%;
+    height: 10%;
+    left: 5.7%;
+    top: 85%;
+  }
+
+  .contenido img {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .logo {
+    top: 20px;
+    left: -30px;
+  }
+
+  textarea {
+    width: 90%;
+    height: 35%;
+    left: 5.7%;
+    top: 145px;
+    font-size: 32px;
+    line-height: 150%;
+  }
+
+  .botones {
+    width: 90%;
+    left: 5.7%;
+    bottom: 28%;
+  }
+
+  .botones .caja-btn {
+    gap: 20px;
+  }
+
+  .lado-der {
+    width: 90%;
+    height: 23%;
+    left: 5.6%;
+    top: 75%;
+  }
+}
