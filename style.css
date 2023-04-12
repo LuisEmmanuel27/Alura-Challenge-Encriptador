@@ -43,10 +43,40 @@ textarea::placeholder {
 /* Estiliza la barra de desplazamiento */
 textarea::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
-/* Estiliza el "pulgar" de la barra de desplazamiento */
+textarea::-moz-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+textarea::-ms-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+textarea::-o-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
 textarea::-webkit-scrollbar-thumb {
+  background-color: #406797;
+  border-radius: 5px;
+}
+
+textarea::-moz-scrollbar-thumb {
+  background-color: #406797;
+  border-radius: 5px;
+}
+
+textarea::-ms-scrollbar-thumb {
+  background-color: #406797;
+  border-radius: 5px;
+}
+
+textarea::-o-scrollbar-thumb {
   background-color: #406797;
   border-radius: 5px;
 }
